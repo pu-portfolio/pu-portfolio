@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PU JIAJIE | 时尚设计师官网</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B0000',
+                        primaryDark: '#660000',
+                        primaryLight: '#A52A2A',
+                        gold: '#D4AF37',
+                        dark: '#0A0A0A',
+                        darkGray: '#1A1A1A',
+                        midGray: '#333333',
+                        lightGray: '#888888',
+                        offWhite: '#F5F5F5'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            }
+            .bg-texture {
+                background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%238b0000' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+            }
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+            .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+            .animate-fade-in {
+                animation: fadeIn 0.8s ease-in-out forwards;
+            }
+            .animate-slide-up {
+                animation: slideUp 0.8s ease-out forwards;
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            @keyframes slideUp {
+                from { transform: translateY(30px); opacity: 0; }
+                to { transform: translateY(0); opacity: 1; }
+            }
+        }
+    </style>
+</head>
+<body class="font-inter bg-dark text-offWhite overflow-x-hidden bg-texture">
+    <!-- 导航栏 -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4">
+        <div class="container mx-auto px-4 md:px-8 flex justify-between items-center">
+            <a href="#hero" class="text-2xl md:text-3xl font-black text-white tracking-wider">
+                PU<span class="text-primary">.</span>JIAJIE
+            </a>
+            <!-- 桌面端导航 -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-white hover:text-primaryLight transition-colors duration-300 font-medium">关于我</a>
+                <a href="#experience" class="text-white hover:text-primaryLight transition-colors duration-300 font-medium">职业履历</a>
+                <a href="#portfolio" class="text-white hover:text-primaryLight transition-colors duration-300 font-medium">作品集</a>
+                <a href="#skills" class="text-white hover:text-primaryLight transition-colors duration-300 font-medium">核心能力</a>
+                <a href="#contact" class="bg-primary hover:bg-primaryLight transition-all duration-300 px-6 py-2 rounded-sm text-white font-medium">联系我</a>
+            </div>
+            <!-- 移动端菜单按钮 -->
+            <button id="menuBtn" class="md:hidden text-white text-2xl">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+        <!-- 移动端导航菜单 -->
+        <div id="mobileMenu" class="md:hidden fixed top-0 left-0 w-full h-0 bg-darkGray overflow-hidden transition-all duration-500 z-40">
+            <div class="container mx-auto px-4 pt-20 pb-8 flex flex-col space-y-6 items-center">
+                <button id="closeBtn" class="absolute top-6 right-6 text-white text-2xl">
+                    <i class="fa fa-times"></i>
+                </button>
+                <a href="#hero" class="text-white text-xl font-medium hover:text-primaryLight transition-colors duration-300">首页</a>
+                <a href="#about" class="text-white text-xl font-medium hover:text-primaryLight transition-colors duration-300">关于我</a>
+                <a href="#experience" class="text-white text-xl font-medium hover:text-primaryLight transition-colors duration-300">职业履历</a>
+                <a href="#portfolio" class="text-white text-xl font-medium hover:text-primaryLight transition-colors duration-300">作品集</a>
+                <a href="#skills" class="text-white text-xl font-medium hover:text-primaryLight transition-colors duration-300">核心能力</a>
+                <a href="#contact" class="bg-primary hover:bg-primaryLight transition-all duration-300 w-full text-center py-3 rounded-sm text-white font-medium mt-4">联系我</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero首屏 -->
+    <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-dark/90 via-dark/80 to-dark z-10"></div>
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1582554501913-5a9363e38146?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-40"></div>
+        <div class="absolute top-0 left-0 w-full h-full bg-primary/10"></div>
+        <div class="container mx-auto px-4 md:px-8 relative z-20 text-center">
+            <p class="text-primaryLight uppercase tracking-[0.3em] text-sm md:text-base mb-4 animate-fade-in">Fashion Designer & Trend Planning Expert</p>
+            <h1 class="text-[clamp(2.5rem,8vw,6rem)] font-black text-white leading-none mb-6 animate-slide-up text-shadow">
+                濮家捷<br>PU JIAJIE
+            </h1>
+            <p class="text-lightGray text-[clamp(1rem,3vw,1.5rem)] max-w-3xl mx-auto mb-10 animate-fade-in delay-300">
+                时尚设计师 | 牛仔品类全链路专家 | 趋势企划顾问
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up" style="animation-delay: 0.4s;">
+                <a href="#portfolio" class="bg-primary hover:bg-primaryLight transition-all duration-300 px-8 py-3 rounded-sm text-white font-medium w-full sm:w-auto">
+                    查看作品集
+                </a>
+                <a href="#about" class="border border-white/30 hover:border-primary hover:text-primaryLight transition-all duration-300 px-8 py-3 rounded-sm text-white font-medium w-full sm:w-auto">
+                    了解更多
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce z-20">
+            <a href="#about" class="text-white/70 hover:text-primary">
+                <i class="fa fa-chevron-down text-xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section id="about" class="py-20 md:py-32 bg-darkGray">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="w-full md:w-1/2">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-white mb-6">
+                        关于<span class="text-primary">我</span>
+                    </h2>
+                    <p class="text-lightGray mb-6 leading-relaxed">
+                        毕业于苏州大学服装设计与工程、工商管理双学士学位，后赴意大利佛罗伦萨Polimoda学院深造时尚设计硕士学位，拥有扎实的设计功底与全链路的品牌运营思维。
+                    </p>
+                    <p class="text-lightGray mb-6 leading-relaxed">
+                        深耕牛仔及皮革皮草品类设计与趋势企划，擅长从潮流趋势洞察到产品落地的全流程把控，兼具手绘创意能力与商业落地思维，拥有上海、苏州、广州等地成熟的全品类供应链资源，覆盖纱线、面料、刺绣、印花、洗水等全环节，掌握新塘牛仔全链工厂资源。
+                    </p>
+                    <p class="text-lightGray leading-relaxed">
+                        曾任职POP趋势牛仔设计主管、RAF VALOIS设计总监，服务多个国际设计师品牌，合作《这就是街舞》等热门IP，同时拥有舞台剧、昆曲戏服设计等跨界创作经验，设计风格覆盖松弛静奢、工装潮范、复古解构等多元方向。
+                    </p>
+                    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="border-l-4 border-primary pl-4">
+                            <h3 class="text-gold text-3xl font-bold mb-2">7+</h3>
+                            <p class="text-lightGray text-sm">时尚行业设计经验</p>
+                        </div>
+                        <div class="border-l-4 border-primary pl-4">
+                            <h3 class="text-gold text-3xl font-bold mb-2">100+</h3>
+                            <p class="text-lightGray text-sm">全品类设计企划项目</p>
+                        </div>
+                        <div class="border-l-4 border-primary pl-4">
+                            <h3 class="text-gold text-3xl font-bold mb-2">50+</h3>
+                            <p class="text-lightGray text-sm">成熟供应链合作资源</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 relative">
+                    <div class="w-full h-[500px] relative overflow-hidden rounded-sm">
+                        <img src="https://images.unsplash.com/photo-1551489155-31a8f90b6e90?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80" alt="PU JIAJIE 设计工作照" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent"></div>
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 w-2/3 bg-primary p-6 rounded-sm hidden md:block">
+                        <h3 class="text-white font-bold text-xl mb-2">教育背景</h3>
+                        <ul class="text-white/80 space-y-2 text-sm">
+                            <li>• 意大利 Polimoda 时尚设计硕士</li>
+                            <li>• 苏州大学 服装设计与工程学士</li>
+                            <li>• 苏州大学 工商管理双学士</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 职业履历 -->
+    <section id="experience" class="py-20 md:py-32 bg-dark">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-white mb-4">
+                    职业<span class="text-primary">履历</span>
+                </h2>
+                <p class="text-lightGray">从趋势企划到品牌全案设计，深耕时尚设计全链路，覆盖商业品牌、趋势研究、跨界设计多维度</p>
+            </div>
+            <div class="relative">
+                <!-- 时间线 -->
+                <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-primary/30 transform md:-translate-x-1/2"></div>
+                <!-- 履历内容 -->
+                <div class="space-y-12">
+                    <!-- 履历1 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="w-full md:w-1/2 md:pr-12 text-right order-2 md:order-1 mt-6 md:mt-0">
+                            <h3 class="text-white text-xl font-bold mb-2">POP趋势</h3>
+                            <p class="text-primary font-medium mb-3">牛仔设计主管 | 2024.08 - 2025.08</p>
+                            <ul class="text-lightGray space-y-2 text-sm leading-relaxed">
+                                <li>负责牛仔及皮革皮草品类趋势分析、品牌创意企划、趋势书籍制作</li>
+                                <li>主导牛仔品类趋势讲座及行业直播分享</li>
+                                <li>完成2026SS、26/27AW季度趋势企划与牛仔单品全案设计</li>
+                            </ul>
+                        </div>
+                        <div class="absolute left-0 md:left-1/2 top-0 w-4 h-4 bg-primary rounded-full transform -translate-x-1/2 z-10"></div>
+                        <div class="w-full md:w-1/2 md:pl-12 order-1 md:order-2">
+                            <div class="bg-darkGray p-4 rounded-sm border-l-4 border-primary md:border-l-0 md:border-r-4 md:border-primary">
+                                <p class="text-white/90 font-medium">核心领域</p>
+                                <p class="text-lightGray text-sm">趋势洞察 | 品类企划 | 行业研究 | 内容输出</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 履历2 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="w-full md:w-1/2 md:pr-12 order-2 md:order-1 mt-6 md:mt-0">
+                            <div class="bg-darkGray p-4 rounded-sm border-r-4 border-primary md:border-r-0 md:border-l-4 md:border-primary">
+                                <p class="text-white/90 font-medium">核心领域</p>
+                                <p class="text-lightGray text-sm">品牌设计 | 全链路管控 | 供应链管理 | 商业落地</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-0 md:left-1/2 top-0 w-4 h-4 bg-primary rounded-full transform -translate-x-1/2 z-10"></div>
+                        <div class="w-full md:w-1/2 md:pl-12 text-left order-1 md:order-2">
+                            <h3 class="text-white text-xl font-bold mb-2">RAF VALOIS</h3>
+                            <p class="text-primary font-medium mb-3">设计总监 | 2022.08 - 2024.08</p>
+                            <ul class="text-lightGray space-y-2 text-sm leading-relaxed">
+                                <li>基于潮流趋势分析，完成品牌季度企划与全系列设计</li>
+                                <li>负责面辅料选型、图案设计、款式开发，跟进打样与版型工艺优化</li>
+                                <li>管控大货生产全流程，应对突发状况，保障交期与品质</li>
+                                <li>负责产品拍摄与品牌宣传推广，产品出口英国、澳洲、日本等多国买手店</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 履历3 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="w-full md:w-1/2 md:pr-12 text-right order-2 md:order-1 mt-6 md:mt-0">
+                            <h3 class="text-white text-xl font-bold mb-2">Andrew Mackenzie</h3>
+                            <p class="text-primary font-medium mb-3">设计&买手助理 | 2021.11 - 2022.08</p>
+                            <ul class="text-lightGray space-y-2 text-sm leading-relaxed">
+                                <li>协助设计师完成概念胶囊系列设计与款式开发</li>
+                                <li>负责买手店选品、货品数据整理与趋势调研</li>
+                                <li>参与品牌秀场筹备与产品陈列工作</li>
+                            </ul>
+                        </div>
+                        <div class="absolute left-0 md:left-1/2 top-0 w-4 h-4 bg-primary rounded-full transform -translate-x-1/2 z-10"></div>
+                        <div class="w-full md:w-1/2 md:pl-12 order-1 md:order-2">
+                            <div class="bg-darkGray p-4 rounded-sm border-l-4 border-primary md:border-l-0 md:border-r-4 md:border-primary">
+                                <p class="text-white/90 font-medium">核心领域</p>
+                                <p class="text-lightGray text-sm">设计师品牌 | 款式开发 | 买手运营 | 秀场执行</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 履历4 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="w-full md:w-1/2 md:pr-12 order-2 md:order-1 mt-6 md:mt-0">
+                            <div class="bg-darkGray p-4 rounded-sm border-r-4 border-primary md:border-r-0 md:border-l-4 md:border-primary">
+                                <p class="text-white/90 font-medium">核心领域</p>
+                                <p class="text-lightGray text-sm">图案设计 | IP合作 | 系列开发 | 印花工艺</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-0 md:left-1/2 top-0 w-4 h-4 bg-primary rounded-full transform -translate-x-1/2 z-10"></div>
+                        <div class="w-full md:w-1/2 md:pl-12 text-left order-1 md:order-2">
+                            <h3 class="text-white text-xl font-bold mb-2">KUMY&PUSH</h3>
+                            <p class="text-primary font-medium mb-3">图案设计师 | 2021.05 - 2021.09</p>
+                            <ul class="text-lightGray space-y-2 text-sm leading-relaxed">
+                                <li>负责《这！就是街舞4》联名系列图案设计</li>
+                                <li>完成品牌2021秋冬「City Nomad」系列全案图案开发</li>
+                                <li>主导植物花卉、拼贴解构、LOGO视觉等印花设计与工艺落地</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 跨界项目 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="w-full md:w-1/2 md:pr-12 text-right order-2 md:order-1 mt-6 md:mt-0">
+                            <h3 class="text-white text-xl font-bold mb-2">跨界设计与教育</h3>
+                            <p class="text-primary font-medium mb-3">2018 - 2021</p>
+                            <ul class="text-lightGray space-y-2 text-sm leading-relaxed">
+                                <li>上海延安中学及诺德安达双语学校 服装设计老师</li>
+                                <li>苏州西园寺居士林舞台剧《悉达多》戏服设计</li>
+                                <li>苏州市政府2018中秋晚会《罗密欧与朱丽叶》昆曲戏服设计</li>
+                                <li>福建双驰实业股份有限公司 鞋类设计师（实习）</li>
+                            </ul>
+                        </div>
+                        <div class="absolute left-0 md:left-1/2 top-0 w-4 h-4 bg-primary rounded-full transform -translate-x-1/2 z-10"></div>
+                        <div class="w-full md:w-1/2 md:pl-12 order-1 md:order-2">
+                            <div class="bg-darkGray p-4 rounded-sm border-l-4 border-primary md:border-l-0 md:border-r-4 md:border-primary">
+                                <p class="text-white/90 font-medium">核心领域</p>
+                                <p class="text-lightGray text-sm">戏服设计 | 服装设计教育 | 跨界IP合作 | 鞋类设计</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品集 -->
+    <section id="portfolio" class="py-20 md:py-32 bg-darkGray">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-white mb-4">
+                    作品<span class="text-primary">集</span>
+                </h2>
+                <p class="text-lightGray">从趋势企划到产品落地，覆盖牛仔全品类、品牌系列、跨界设计，兼具创意表达与商业价值</p>
+            </div>
+            <!-- 作品分类标签 -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="portfolio-tab active bg-primary text-white px-6 py-2 rounded-sm text-sm font-medium transition-all duration-300" data-tab="all">全部作品</button>
+                <button class="portfolio-tab bg-dark hover:bg-primary/80 text-white px-6 py-2 rounded-sm text-sm font-medium transition-all duration-300" data-tab="trend">趋势企划</button>
+                <button class="portfolio-tab bg-dark hover:bg-primary/80 text-white px-6 py-2 rounded-sm text-sm font-medium transition-all duration-300" data-tab="brand">品牌设计</button>
+                <button class="portfolio-tab bg-dark hover:bg-primary/80 text-white px-6 py-2 rounded-sm text-sm font-medium transition-all duration-300" data-tab="cross">跨界设计</button>
+            </div>
+            <!-- 作品网格 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 作品1 -->
+                <div class="portfolio-item group" data-category="trend">
+                    <div class="relative overflow-hidden rounded-sm">
+                        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" alt="2026SS 松弛静奢 工装档案" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                            <h3 class="text-white text-xl font-bold mb-2">2026SS 松弛静奢 工装档案</h3>
+                            <p class="text-white/80 text-sm mb-4">季度趋势企划 | 牛仔单品全案设计 | 廓形与工艺趋势研究</p>
+                            <a href="#" class="text-primaryLight font-medium text-sm flex items-center">
+                                查看详情 <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 作品2 -->
+                <div class="portfolio-item group" data-category="trend">
+                    <div class="relative overflow-hidden rounded-sm">
+                        <img src="https://images.unsplash.com/photo-1594067598377-be4980d35c22?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="26/27 AW 燃点 趋势企划" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                            <h3 class="text-white text-xl font-bold mb-2">26/27 AW 燃点 趋势企划</h3>
+                            <p class="text-white/80 text-sm mb-4">秋冬主题趋势 | 牛仔&皮革皮草品类分析 | 色彩与面料趋势</p>
+                            <a href="#" class="text-primaryLight font-medium text-sm flex items-center">
+                                查看详情 <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 作品3 -->
+                <div class="portfolio-item group" data-category="trend">
+                    <div class="relative overflow-hidden rounded-sm">
+                        <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="女装牛仔市场全维度分析" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                            <h3 class="text-white text-xl font-bold mb-2">女装牛仔市场全维度分析</h3>
+                            <p class="text-white/80 text-sm mb-4">标杆品牌分析 | 电商爆款数据研究 | T台趋势与批发市场调研</p>
+                            <a href="#" class="text-primaryLight font-medium text-sm flex items-center">
+                                查看详情 <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 作品4 -->
+                <div class="portfolio-item group" data-category="brand">
+                    <div class="relative overflow-hidden rounded-sm">
+                        <img src="https://images.unsplash.com/photo-1593720213428-28a5b9e94613?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="RAF VALOIS 季度系列设计" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                            <h3 class="text-white text-xl font-bold mb-2">RAF VALOIS 季度系列设计</h3>
+                            <p class="text-white/80 text-sm mb-4">全系列款式开发 | 图案与面料设计 | 版型工艺与大货落地</p>
+                            <a href="#" class="text-primaryLight font-medium text-sm flex items-center">
+                                查看详情 <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 作品5 -->
+                <div class="portfolio-item group" data-category="brand">
+                    <div class="relative overflow-hidden rounded-sm">
+                        <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="KUMY 21AW 「City Nomad」系列" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                            <h3 class="text-white text-xl font-bold mb-2">KUMY 21AW 「City Nomad」系列</h3>
+                            <p class="text-white/80 text-sm mb-4">全案图案设计 | 植物花卉与解构拼贴印花 | 街舞IP联名设计</p>
+                            <a href="#" class="text-primaryLight font-medium text-sm flex items-center">
+                                查看详情 <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 作品6 -->
+                <div class="portfolio-item group" data-category="cross">
+                    <div class="relative overflow-hidden rounded-sm">
+                        <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" alt="昆曲与舞台剧戏服设计" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                            <h3 class="text-white text-xl font-bold mb-2">昆曲与舞台剧戏服设计</h3>
+                            <p class="text-white/80 text-sm mb-4">《悉达多》舞台剧戏服 | 昆曲《罗密欧与朱丽叶》戏服设计</p>
+                            <a href="#" class="text-primaryLight font-medium text-sm flex items-center">
+                                查看详情 <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心能力 -->
+    <section id="skills" class="py-20 md:py-32 bg-dark">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-white mb-4">
+                    核心<span class="text-primary">能力</span>
+                </h2>
+                <p class="text-lightGray">从创意设计到商业落地，全链路专业能力覆盖，打造兼具创意与市场价值的设计作品</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- 能力1 -->
+                <div class="bg-darkGray p-8 rounded-sm border-t-4 border-primary hover:transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="text-primary text-4xl mb-6">
+                        <i class="fa fa-paint-brush"></i>
+                    </div>
+                    <h3 class="text-white text-xl font-bold mb-4">创意设计能力</h3>
+                    <ul class="text-lightGray space-y-2 text-sm">
+                        <li>• 全品类服装设计，深耕牛仔专项</li>
+                        <li>• 手绘功底扎实，适配多元设计风格</li>
+                        <li>• 图案、印花、面料再造原创设计</li>
+                        <li>• 从概念企划到款式落地全流程设计</li>
+                    </ul>
+                </div>
+                <!-- 能力2 -->
+                <div class="bg-darkGray p-8 rounded-sm border-t-4 border-primary hover:transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="text-primary text-4xl mb-6">
+                        <i class="fa fa-line-chart"></i>
+                    </div>
+                    <h3 class="text-white text-xl font-bold mb-4">趋势企划能力</h3>
+                    <ul class="text-lightGray space-y-2 text-sm">
+                        <li>• 时尚趋势洞察与季度主题企划</li>
+                        <li>• 牛仔&皮革皮草品类专项趋势研究</li>
+                        <li>• 色彩、面料、廓形、工艺趋势分析</li>
+                        <li>• 品牌全案企划与爆款产品打造</li>
+                    </ul>
+                </div>
+                <!-- 能力3 -->
+                <div class="bg-darkGray p-8 rounded-sm border-t-4 border-primary hover:transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="text-primary text-4xl mb-6">
+                        <i class="fa fa-industry"></i>
+                    </div>
+                    <h3 class="text-white text-xl font-bold mb-4">供应链与落地</h3>
+                    <ul class="text-lightGray space-y-2 text-sm">
+                        <li>• 长三角/珠三角成熟全品类供应链资源</li>
+                        <li>• 新塘牛仔全链工厂深度合作</li>
+                        <li>• 面辅料选型、打样、大货全流程管控</li>
+                        <li>• 洗水、印花、刺绣等工艺落地把控</li>
+                    </ul>
+                </div>
+                <!-- 能力4 -->
+                <div class="bg-darkGray p-8 rounded-sm border-t-4 border-primary hover:transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="text-primary text-4xl mb-6">
+                        <i class="fa fa-cogs"></i>
+                    </div>
+                    <h3 class="text-white text-xl font-bold mb-4">专业软件技能</h3>
+                    <ul class="text-lightGray space-y-2 text-sm">
+                        <li>• Adobe Photoshop 精通</li>
+                        <li>• Adobe Illustrator 精通</li>
+                        <li>• InDesign、Dimension 熟练</li>
+                        <li>• Microsoft Office 全系列熟练</li>
+                        <li>• 中文母语，英语熟练，意大利语初级</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-16 bg-primary/10 border border-primary/30 rounded-sm p-8">
+                <h3 class="text-white text-xl font-bold mb-6 text-center">核心资源优势</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div class="p-4">
+                        <p class="text-gold font-bold text-lg mb-1">全品类面料资源</p>
+                        <p class="text-lightGray text-sm">纱线、牛仔、皮革、针织等全品类面料合作</p>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-gold font-bold text-lg mb-1">牛仔全链工厂</p>
+                        <p class="text-lightGray text-sm">新塘牛仔工厂深度合作，洗水工艺全流程管控</p>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-gold font-bold text-lg mb-1">工艺加工资源</p>
+                        <p class="text-lightGray text-sm">刺绣、印花、解构再造等多元工艺合作资源</p>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-gold font-bold text-lg mb-1">海内外渠道资源</p>
+                        <p class="text-lightGray text-sm">国内买手店、海外多国出口渠道合作资源</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我 -->
+    <section id="contact" class="py-20 md:py-32 bg-darkGray relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-dark/90 via-dark/80 to-dark z-10"></div>
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551489155-31a8f90b6e90?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80')] bg-cover bg-center opacity-20"></div>
+        <div class="container mx-auto px-4 md:px-8 relative z-20">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-white mb-4">
+                        联系<span class="text-primary">我</span>
+                    </h2>
+                    <p class="text-lightGray">品牌合作、设计企划、项目咨询，欢迎随时沟通</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-white text-xl font-bold mb-8">联系方式</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="text-primary text-2xl mt-1">
+                                    <i class="fa fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p class="text-white font-medium mb-1">电话</p>
+                                    <p class="text-lightGray">+86 18962526841</p>
+                                    <p class="text-lightGray">+1 (816) 832-5581</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="text-primary text-2xl mt-1">
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="text-white font-medium mb-1">邮箱</p>
+                                    <p class="text-lightGray">superpusupu@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-12">
+                            <h3 class="text-white text-xl font-bold mb-6">所获荣誉</h3>
+                            <p class="text-lightGray">2017年“八闽杯”海峡两岸大学生设计工作坊三等奖（省级三等奖）</p>
+                        </div>
+                    </div>
+                    <div class="bg-dark p-8 rounded-sm">
+                        <h3 class="text-white text-xl font-bold mb-6">发送合作咨询</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-white/80 text-sm mb-2">姓名</label>
+                                <input type="text" id="name" class="w-full bg-darkGray border border-midGray rounded-sm px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors duration-300">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-white/80 text-sm mb-2">邮箱</label>
+                                <input type="email" id="email" class="w-full bg-darkGray border border-midGray rounded-sm px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors duration-300">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-white/80 text-sm mb-2">合作需求</label>
+                                <textarea id="message" rows="5" class="w-full bg-darkGray border border-midGray rounded-sm px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors duration-300"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary hover:bg-primaryLight transition-all duration-300 text-white font-medium py-3 rounded-sm">
+                                发送信息
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark py-8 border-t border-midGray/30">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <a href="#hero" class="text-2xl font-black text-white tracking-wider mb-4 md:mb-0">
+                    PU<span class="text-primary">.</span>JIAJIE
+                </a>
+                <p class="text-lightGray text-sm text-center md:text-right">
+                    © 2024 PU JIAJIE. All Rights Reserved. 时尚设计师 | 牛仔品类全链路专家
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-dark/90', 'backdrop-blur-md', 'py-3', 'shadow-lg');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.remove('bg-dark/90', 'backdrop-blur-md', 'py-3', 'shadow-lg');
+                navbar.classList.add('py-4');
+            }
+        });
+
+        // 移动端菜单
+        const menuBtn = document.getElementById('menuBtn');
+        const closeBtn = document.getElementById('closeBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.style.height = '100vh';
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.style.height = '0';
+            document.body.style.overflow = 'auto';
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.style.height = '0';
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 作品集标签切换
+        const portfolioTabs = document.querySelectorAll('.portfolio-tab');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        portfolioTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // 切换激活状态
+                portfolioTabs.forEach(t => {
+                    t.classList.remove('active', 'bg-primary');
+                    t.classList.add('bg-dark', 'hover:bg-primary/80');
+                });
+                tab.classList.add('active', 'bg-primary');
+                tab.classList.remove('bg-dark', 'hover:bg-primary/80');
+
+                const tabCategory = tab.getAttribute('data-tab');
+
+                // 筛选作品
+                portfolioItems.forEach(item => {
+                    const itemCategory = item.getAttribute('data-category');
+                    if (tabCategory === 'all' || tabCategory === itemCategory) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // 滚动动画
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div > div').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
